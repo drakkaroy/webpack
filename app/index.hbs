@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Webpack Scaffolding</title>
+    <title>{{htmlWebpackPlugin.options.title}}</title>
 </head>
 <body>
 
     <div class="container">
-        <h1>Webpack Scaffolding</h1>
+        {{> partials/title}}
+        <h2>Webpack Scaffolding</h2>
         <button id="btn">Click me!</button>
+        <br>
+        {{> components/cta/cta}}
 
     </div>
 </body>

@@ -1,3 +1,5 @@
+const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -15,6 +17,7 @@ module.exports = {
 
     module: {
         rules: [
+            { test: /\.hbs$/, loader: "handlebars-loader" },
             {
                 test: /\.scss$/i,
                 // esta opcion mete el css dentro del js
@@ -26,8 +29,13 @@ module.exports = {
     },
 
     plugins: [
+        new webpack.LoaderOptionsPlugin({
+            options: {
+              handlebarsLoader: {}
+            }
+        }),
         new HtmlWebpackPlugin({
-            template: './app/index.html'
+            template: './app/index.hbs'
         }),
         new MiniCssExtractPlugin({
             filename: 'app.css'
