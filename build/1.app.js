@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{4:function(e,n,t){"use strict";t.r(n),t.d(n,"card",(function(){return o}));const o={init:e=>{let n=e.getElementsByClassName("info")[0].textContent;e.getElementsByClassName("alert")[0].addEventListener("click",e=>{e.preventDefault(),console.log(n)}),console.log("APP.card")}}}}]);

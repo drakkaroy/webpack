@@ -9,3 +9,27 @@
         color: green;
     }
 }
+.slider {
+    padding: 40px;
+    background-color: seagreen;
+}
+.layout {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.card {
+    padding: 20px;
+    background-color: rosybrown;
+    margin: 10px;
+}
+.cta {    
+    background-color: slateblue;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}

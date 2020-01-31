@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{6:function(s,n,o){"use strict";o.r(n),o.d(n,"slider",(function(){return t}));const t={init:s=>{console.log("APP.slider")},test:()=>{console.log("this is just a test")}}}}]);
