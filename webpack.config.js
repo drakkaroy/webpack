@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    // mode: 'development',
+    mode: 'development',
     entry: './app/app',
     output: {
-        path: __dirname + '/build',
+        path: path.join(__dirname + '/build'),
         filename: 'app.js'
     },
 

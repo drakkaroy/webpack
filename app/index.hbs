@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{htmlWebpackPlugin.options.title}}</title>
+    <title>title</title>
 </head>
 <body>
 
     <div class="container">
-        {{> partials/title}}
-        <h2>Webpack Scaffolding</h2>
-        <button id="btn">Click me!</button>
-        <br>
-        {{> components/cta/cta}}
+        
+        {{> components/slider/slider parameter="monry" }}
+
+        <div class="layout">
+            {{> components/card/card }}
+            
+            {{> components/card/card }}
+        </div>
+
+        {{> components/cta/cta }}
+
+        <div class="patito" data-action="patito">
+            <p>example component</p>
+        </div>
 
     </div>
+
 </body>
 </html>

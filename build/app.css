@@ -1,2 +1,34 @@
-.container{max-width:700px;margin:0 auto;background:lightblue;text-align:center}.container h1{width:100%;text-align:center;color:green}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: lightblue;
+  text-align: center; }
+  .container h1 {
+    width: 100%;
+    text-align: center;
+    color: green; }
+
+.layout {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+
+.card {
+  padding: 20px;
+  background-color: rosybrown;
+  margin: 10px; }
+
+.cta {
+  background-color: slateblue;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer; }
+
+.slider {
+  padding: 40px;
+  background-color: seagreen; }
 
