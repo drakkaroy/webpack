@@ -1,0 +1,6 @@
+{
+    "app": "./app/app.js",
+    "slider": "./app/components/slider/slider.js",
+    "card": "./app/components/card/card.js",
+    "cta": "./app/components/cta/cta.js"
+}

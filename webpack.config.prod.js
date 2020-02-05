@@ -3,27 +3,31 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
+const ConcatPlugin = require('webpack-concat-plugin');
+
+const entryComponents = require('./app/core/components.json');
 
 module.exports = {
-    mode: 'development',
-    entry: './app/app',
+    mode: 'production',
+    // entry: entryComponents,
+    entry: {
+        'app': path.resolve('./app/app')
+    },
     output: {
-        path: path.join(__dirname + '/build'),
-        filename: 'assets/js/[name].app.js'
+        path: path.resolve('./build'),
+        filename: 'assets/js/[name].js',
+        chunkFilename: 'assets/js/app-[name].js',
     },
-
-    devServer: {
-        port: 8080
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
     },
-
     module: {
         rules: [
             { test: /\.hbs$/, loader: "handlebars-loader" },
             {
                 test: /\.(sa|sc|c)ss$/i,
-                // esta opcion mete el css dentro del js
-                // use: ['style-loader', 'css-loader', 'sass-loader']
-                // esta opcion extrae el css a un file separad0
                 use: [
                     MiniCssExtractPlugin.loader, 
                     'css-loader', 
@@ -53,6 +57,28 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                loader: 'image-webpack-loader',
+                options: {
+                    mozjpeg: {
+                        progressive: true,
+                        quality: 65
+                    },
+                    optipng: {
+                        enabled: true,
+                    },
+                    pngquant: {
+                        quality: [0.65, 0.90],
+                        speed: 4
+                    },
+                    gifsicle: {
+                        interlaced: false,
+                    },
+                    webp: {
+                        quality: 75
+                    }
+                }
             }
         ]
     },
@@ -67,7 +93,19 @@ module.exports = {
             template: './app/index.hbs'
         }),
         new MiniCssExtractPlugin({
-            filename: 'assets/css/app.css'
+            filename: 'assets/css/app.css',
+            chunkFilename: "[id].css"
+        // }),
+        // new ConcatPlugin({
+        //     uglify: false,
+        //     sourceMap: false,
+        //     name: 'result',
+        //     outputPath: 'assets/js/',
+        //     fileName: '[name].js',
+        //     filesToConcat: ['./app/core/*', './app/app.js', './app/components/**/*.js'],
+        //     attributes: {
+        //         async: true
+        //     }
         })
-    ],
+    ]
 }

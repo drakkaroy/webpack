@@ -1,4 +1,5 @@
 import './app.scss';
+import './assets/images/handlebars-logo.png';
 
 import './core/siteconfig';
 import componentsMaping from './core/components';
@@ -21,7 +22,7 @@ const initController = (() => {
             const componentName = component.getAttribute('data-action');
             
             if(componentsMaping[componentName]){
-                import(`./components/${componentName}/${componentName}.js`)
+                import(/* webpackChunkName: "[request]" */ `./components/${componentName}/${componentName}.js`)
                     .then(APP => {APP[componentName].init(component)});
             }         
             

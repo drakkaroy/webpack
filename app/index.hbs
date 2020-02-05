@@ -9,13 +9,15 @@
 <body>
 
     <div class="container">
+
+        <div class="logo"><img src="assets/images/handlebars-logo.png" alt="logo"></div>
         
         {{> components/slider/slider parameter="monry" }}
 
         <div class="layout">
-            {{> components/card/card }}
+            {{> components/card/card  parameter="title number #1"}}
             
-            {{> components/card/card }}
+            {{> components/card/card parameter="title number #2"}}
         </div>
 
         {{> components/cta/cta }}
